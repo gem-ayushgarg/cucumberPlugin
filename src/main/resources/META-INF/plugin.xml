@@ -1,0 +1,52 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.example.plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>TestPlugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="gargayush308@gmail.com" url="https://github.com/gem-ayushgarg">Ayush Garg</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow factoryClass="com.example.plugin.MyToolWindowFactory" id="Duplicate Scenarios" anchor="bottom" />
+    </extensions>
+    <actions>
+<!--        <action-->
+<!--                id="com.example.plugin.TestAction"-->
+<!--                class="com.example.plugin.TestAction"-->
+<!--                text="Action Basics Plugin: Popup Dialog Action"-->
+<!--                description="SDK action example"-->
+<!--                >-->
+<!--            <override-text place="MainMenu" text="Test Action"/>-->
+<!--            <keyboard-shortcut-->
+<!--                    keymap="$default"-->
+<!--                    first-keystroke="control alt A"-->
+<!--                    second-keystroke="C"/>-->
+<!--            <mouse-shortcut-->
+<!--                    keymap="$default"-->
+<!--                    keystroke="control button3 doubleClick"/>-->
+<!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
+<!--        </action>-->
+        <action id="com.example.plugin.TestAction" class="com.example.plugin.TestAction" text="Get Feature Content"
+                description="To test for opening browser" icon="AllIcons.Vcs.Vendors.Github">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="$Copy"/>
+        </action>
+    </actions>
+</idea-plugin>
